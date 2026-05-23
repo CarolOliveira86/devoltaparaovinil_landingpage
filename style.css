@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*CORES*/
+  --cor-branco: #fff;
+  --cor--fonte-preto: #000;
+  --cor-preto: #000;
+  --cor-cinza-claro: #e0e0e0;
+  --cor-cinza-escuro: #8d8d8d;
+  --cor-laranja: #f15a23;
+  --cor-laranja-claro: #f7941d;
+  /*FONTES*/
+  --font-size-base: 1rem;
+  /* Títulos e Cabeçalhos */
+  --font-size-h1: 2.5rem; /* 40px */
+  --font-size-h2: 2rem; /* 32px */
+  --font-size-h3: 1.75rem; /* 28px */
+  --font-size-h4: 1.5rem; /* 24px */
+  --font-size-h5: 1.25rem; /* 20px */
+  --font-size-h6: 1.125rem; /* 18px */
+  /* Textos secundários e pequenos */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-xl: 1.25rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-branco: #000;
+    --cor-preto-fundo: #000;
+    --cor-fonte-preto: #fff;
+    --cor-cinza-claro: #000;
+    --cor-cinza-escuro: #000;
+  }
+}
+
+button:focus-visible {
+  outline: 3px solid #f15a23;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #f7941d;
+}
+
+button:focus {
+  outline: none;
+}
+
+body {
+  background-color: var(--cor-branco);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: var(--cor-preto-fundo);
+  width: 100vw;
+  height: 15vh;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cor-preto);
+  width: 100vw;
+  padding: 0 50px;
+}
+
+.imgs {
+  width: 17rem;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--cor-laranja);
+  gap: 25px;
+  text-align: center;
+}
+
+.botoes {
+  width: 40vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-h5);
+  cursor: pointer;
+  color: var(--cor-laranja-claro);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.botoes:hover {
+  color: var(--cor-laranja);
+}
+
+.botoes:focus:not(:focus-visible) {
+  outline: none;
+  background-color: inherit;
+}
+
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 1025px) {
+  ul {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    width: 55px;
+  }
+
+  .imgs {
+    width: 10rem;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .burger {
+    display: block;
+    width: 35px;
+  }
+
+  .imgs {
+    width: 6rem;
+    height: auto;
+  }
+}
+
+.banner {
+  background-size: contain;
+  width: 100vw;
+  height: 70vh;
+}
+
+.linhas {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1vh 1vh;
+  margin: -5px;
+}
+
+.linhas_footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1vh 1vh;
+  margin: -10px;
+}
+
+.laranja-escuro {
+  background-color: var(--cor-laranja);
+}
+
+.laranja-claro {
+  background-color: var(--cor-laranja-claro);
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--cor-laranja);
+  text-align: left;
+  margin: 40px 0 20px 20px;
+}
+
+h1:focus {
+  outline: none;
+}
+
+h1:focus-visible {
+  outline: 3px solid var(--cor-laranja);
+}
+
+.texto {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--cor-fonte-preto);
+  font-size: var(--font-size-xl);
+  text-align: left;
+  margin: 0 50px 10px 20px;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cor-branco);
+  width: 100vw;
+  margin: 30px 0;
+}
+
+.final {
+  margin-bottom: 0;
+}
+
+.conteudo:nth-child(even) {
+  background-color: var(--cor-cinza-claro);
+}
+
+.quem_faz {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 30px 30px 0;
+  gap: 20px;
+}
+
+.img_quem {
+  width: 25vh;
+  height: auto;
+  border-radius: 10%;
+  border: 5px solid var(--cor-laranja);
+}
+
+.texto_quem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .img_quem {
+    display: none;
+  }
+}
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-out;
+    transform: scale (1);
+    transform-origin: center center;
+  }
+
+  10% {
+    animation-timing-function: ease-in;
+    transform: scale (0.91);
+  }
+
+  17% {
+    animation-timing-function: ease-out;
+    transform: scale (0.98);
+  }
+
+  33% {
+    animation-timing-function: ease-in;
+    transform: scale (0.87);
+  }
+
+  45% {
+    animation-timing-function: ease-out;
+    transform: scale (1);
+  }
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1vh 1vh auto;
+  row-gap: 1px;
+}
+
+.info_footer {
+  display: grid;
+  background-color: var(--cor-preto);
+  color: var(--cor-laranja);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 40vh;
+  padding: 40px;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-areas:
+    "sobre mapa redes"
+    "direitos direitos direitos";
+  gap: 30px;
+}
+
+.info_01 {
+  grid-area: sobre;
+}
+
+.info_02 {
+  grid-area: mapa;
+}
+
+.info_03 {
+  grid-area: redes;
+}
+
+.info_04 {
+  grid-area: direitos;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.info_02 a {
+  display: block;
+  color: var(--cor-laranja);
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.info_02 a:hover {
+  display: block;
+  color: var(--cor-laranja-claro);
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.info_01 p:first-child,
+.info_02 p:first-child,
+.info_03 p:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.info_03 img {
+  width: 35px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .info_footer {
+    height: 95vh;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sobre"
+      "mapa"
+      "redes"
+      "direitos";
+  }
+}
+
+.icones-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 30px 20px;
+}
+
+.icones-container img {
+  width: 150px;
+  height: auto;
+  opacity: 0;
+  transform: translateX(-450px);
+  animation: myAnim 3.2s cubic-bezier(0.4, 0.8, 0.12, 0.16) infinite both;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-450px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  85%,
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.icones-container img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.icones-container img:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.icones-container img:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+.icones-container img:nth-child(4) {
+  animation-delay: 2.4s;
+}
+
+@media screen and (max-width: 768px) {
+  .icones-container {
+    display: none;
+  }
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  width: 550px;
+  margin: 0 0 40px 20px;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .formulario {
+    width: 90%;
+    margin: 0 20px 40px 20px;
+  }
+}
+
+.submit {
+  background-color: var(--cor-laranja);
+  color: var(--cor-branco);
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  align-self: self-end;
+  font-size: var(--font-size-h5);
+  box-shadow: 1.95px 1.95px 2.6px var(--cor-preto);
+
+  cursor: pointer;
+  width: 130px;
+  height: 40px;
+  margin-left: auto;
+}
+
+.submit:hover {
+  background-color: var(--cor-laranja-claro);
+  box-shadow: 0px 3px 8px var(--cor-preto);
+}
+
+input {
+  height: 50px;
+  padding: 10px;
+  border: 1px solid var(--cor-cinza-escuro);
+  border-radius: 5px;
+  font-size: var(--font-size-base);
+}
+
+textarea {
+  padding: 10px;
+  border: 1px solid var(--cor-cinza-escuro);
+  border-radius: 5px;
+  font-size: var(--font-size-base);
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+}
+
+label {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--cor-preto);
+  font-size: var(--font-size-h6);
+  text-align: left;
+}
